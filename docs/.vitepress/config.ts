@@ -39,12 +39,12 @@ export default defineConfig({
         text: 'Basic',
         items: [
           {text: 'Button', link: '/components/button'},
-          {text: 'Alert', link: '/components/Alert' },
-          {text: 'collapse', link: '/components/collapse'},
-          {text: 'Input', link: '/components/Input'},
-          {text: 'Switch', link: '/components/Switch'},
-          {text: 'Select', link: '/components/Select'},
-          {text: 'Form', link: '/components/Form'},
+          {text: 'Alert', link: '/components/alert' },
+          {text: 'Collapse', link: '/components/collapse'},
+          {text: 'Input', link: '/components/input'},
+          {text: 'Switch', link: '/components/switch'},
+          {text: 'Select', link: '/components/select'},
+          {text: 'Form', link: '/components/form'},
         ]
       }
     ],
