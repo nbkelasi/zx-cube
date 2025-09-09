@@ -4,6 +4,7 @@ import { containerPreview, componentPreview } from '@vitepress-demo-preview/plug
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
+  base: '/zx-cube/',
   title: "ZXui",
   description: "A VitePress Site",
   markdown: {
