@@ -1,0 +1,102 @@
+.zx-alert {
+    /* 基础变量 */
+    --zx-alert-padding: 8px 16px;
+    --zx-alert-border-radius-base: var(--zx-border-radius-base);
+    --zx-alert-title-font-size: 14px;
+    --zx-alert-title-with-description-font-size: 16px;
+    --zx-alert-description-font-size: 14px;
+    --zx-alert-close-font-size: 16px;
+    --zx-alert-close-customed-font-size: 14px;
+    --zx-alert-icon-size: 16px;
+    --zx-alert-icon-large-size: 28px;
+}
+
+.zx-alert {
+    /* 基础样式 */
+    width: 100%;
+    padding: var(--zx-alert-padding);
+    margin: 0;
+    box-sizing: border-box;
+    border-radius: var(--zx-alert-border-radius-base);
+    position: relative;
+    background-color: var(--zx-color-white);
+    overflow: hidden;
+    opacity: 1;
+    display: flex;
+    align-items: center;
+    transition: opacity var(--zx-transition-duration-fast);
+
+    &.is-light, &.is-dark {
+        background-color: var(--zx-alert-bg-color);
+        color: var(--zx-alert-text-color);
+        border-color: var(--zx-alert-border-color);
+
+        & .zx-alert__description {
+            color: var(--zx-alert-text-color);
+        }
+
+        & .zx-alert__close {
+            color: var(--zx-alert-close-color);
+        }
+    }
+    
+    /* 内容区 */
+    & &__content {
+        flex-direction: column;
+        gap: 4px;
+    }
+    & &__title {
+        display: block;
+        font-size: var(--zx-alert-title-font-size);
+        line-height: 24px;
+        font-weight: 500;
+    }
+    & &__title.is-description {
+        font-size: var(--zx-alert-title-with-description-font-size);
+    }
+    & &__description {
+        margin: 0;
+        font-size: var(--zx-alert-description-font-size);
+    }
+
+    /* 可关闭 */
+    & &__close {
+        position: absolute;
+        top: 50%;
+        right: 12px;
+        transform: translateY(-50%);
+        cursor: pointer;
+        font-size: var(--zx-alert-close-font-size);
+        line-height: 1;
+        padding: 4px;
+    }
+
+    /* 图标 */
+    & &__icon {
+        font-size: var(--zx-alert-icon-size);
+        margin-right: 8px;
+    } 
+}
+
+/* 类型与主题变体优化循环 */
+@each $type in primary, success, warning, info, danger {
+    /* light 主题下的类型变体 */
+    .zx-alert--$(type).is-light {
+        --zx-alert-bg-color: var(--zx-color-$(type)-light-9);
+        --zx-alert-text-color: var(--zx-color-$(type));
+        --zx-alert-border-color: var(--zx-color-$(type)-light-5);
+        --zx-alert-icon-color: var(--zx-color-$(type));
+        --zx-alert-close-color: var(--zx-text-color-placeholder);
+    }
+    /* dark 主题下的类型变体 */
+    .zx-alert--$(type).is-dark {
+        --zx-alert-bg-color: var(--zx-color-$(type));
+        --zx-alert-text-color: var(--zx-color-white);
+        --zx-alert-border-color: var(--zx-color-$(type));
+        --zx-alert-icon-color: var(--zx-color-white);
+        --zx-alert-close-color: var(--zx-text-color-white);
+    }
+}
+  .zx-alert.fade-up-leave-to {
+    opacity: 0;
+  }

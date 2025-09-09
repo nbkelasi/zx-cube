@@ -1,0 +1,79 @@
+:root {
+    /* colors */
+    --zx-color-white: #ffffff;
+    --zx-color-black: #000000;  
+    --colors: (
+        primary: #409eff,
+        success: #67c23a,
+        warning: #e6a23c,
+        danger: #f56c6c,
+        error: #f56c6c,
+        info: #909399
+    );
+        
+    @each $val, $color in var(--colors) {
+        --zx-color-$(val): $(color);
+        @for $i from 3 to 9 by 2{
+            --zx-color-$(val)-light-$(i): mix(#fff, $(color), .$(i))
+        }
+        --zx-color-$(val)-light-8: mix(#fff, $(color), .8);
+        --zx-color-$(val)-dark-2: mix(#000, $(color), .2);
+    }
+    --zx-bg-color: #ffffff;
+    --zx-bg-color-page: #f2f3f5;
+    --zx-bg-color-overlay: #ffffff;
+    --zx-text-color-primary: #303133;
+    --zx-text-color-regular: #606266;
+    --zx-text-color-secondary: #909399;
+    --zx-text-color-placeholder: #a8abb2;
+    --zx-text-color-disabled: #c0c4cc;
+    --zx-border-color: #dcdfe6;
+    --zx-border-color-light: #e4e7ed;
+    --zx-border-color-lighter: #ebeef5;
+    --zx-border-color-extra-light: #f2f6fc;
+    --zx-border-color-dark: #d4d7de;
+    --zx-border-color-darker: #cdd0d6;
+    --zx-fill-color: #f0f2f5;
+    --zx-fill-color-light: #f5f7fa;
+    --zx-fill-color-lighter: #fafafa;
+    --zx-fill-color-extra-light: #fafcff;
+    --zx-fill-color-dark: #ebedf0;
+    --zx-fill-color-darker: #e6e8eb;
+    --zx-fill-color-blank: #ffffff;
+
+    /* border */
+    --zx-border-width: 1px;
+    --zx-border-style: solid;
+    --zx-border-color-hover: var(--zx-text-color-disabled);
+    --zx-border: var(--zx-border-width) var(--zx-border-style) var(--zx-border-color);
+    --zx-border-radius-base: 4px;
+    --zx-border-radius-small: 2px;
+    --zx-border-radius-round: 20px;
+    --zx-border-radius-circle: 100%;
+
+    /* font */
+    --zx-font-size-extra-large: 20px;
+    --zx-font-size-large: 18px;
+    --zx-font-size-medium: 16px;
+    --zx-font-size-base: 14px;
+    --zx-font-size-small: 13px;
+    --zx-font-size-extra-small: 12px;
+    --zx-font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+    --zx-font-weight-primary: 500;
+    --zx-font-line-height-primary: 24px;
+
+    /* disabled */
+    --zx-disabled-bg-color: var(--zx-fill-color-light);
+    --zx-disabled-text-color: var(--zx-text-color-placeholder);
+    --zx-disabled-border-color: var(--zx-border-color-light);
+
+    /* animation */
+    --zx-transition-duration: .3s;
+    --zx-transition-duration-fast: .2s;
+
+    /* box */
+    --zx-box-shadow: 0px 12px 32px 4px rgba(0, 0, 0, .04), 0px 8px 20px rgba(0, 0, 0, .08);
+    --zx-box-shadow-light: 0px 0px 12px rgba(0, 0, 0, .12);
+    --zx-box-shadow-lighter: 0px 0px 6px rgba(0, 0, 0, .12);
+    --zx-box-shadow-dark: 0px 16px 48px 16px rgba(0, 0, 0, .08), 0px 12px 32px rgba(0, 0, 0, .12), 0px 8px 16px -8px rgba(0, 0, 0, .16);
+}

@@ -1,0 +1,71 @@
+.zx-collapse{
+    --zx-collapse-border-color: var(--zx-border-color-light);
+    --zx-collapse-header-height: 48px;
+    --zx-collapse-header-bg-color: var(--zx-fill-color-blank);
+    --zx-collapse-header-text-color: var(--zx-text-color-primary);
+    --zx-collapse-header-font-size: 13px;
+    --zx-collapse-content-bg-color: var(--zx-fill-color-blank);
+    --zx-collapse-content-font-size: 13px;
+    --zx-collapse-content-text-color: var(--zx-text-color-primary);
+    --zx-collapse-disabled-text-color: var(--zx-disabled-text-color);
+    --zx-collapse-disabled-border-color: var(--zx-border-color-lighter);
+    /* border-top: 1px solid var(--zx-collapse-border-color);
+    border-bottom: 1px solid var(--zx-collapse-border-color); */
+}
+.zx-collapse-item__header {
+    display: flex;
+    width: 100%;
+    padding: 0;
+    border: none;
+    align-items: center;
+    justify-content: space-between;
+    height: var(--zx-collapse-header-height);
+    line-height: var(--zx-collapse-header-height);
+    background-color: var(--zx-collapse-header-bg-color);
+    color: var(--zx-collapse-header-text-color);
+    cursor: pointer;
+    border-bottom: 1px solid var(--zx-collapse-border-color);
+    font-size: var(--zx-collapse-header-font-size);
+    font-weight: 500;
+    transition: border-bottom-color var(--zx-transition-duration);
+    outline: none;
+    &.is-disabled {
+        color: var(--zx-collapse-disabled-text-color);
+        cursor: not-allowed;
+        background-image: none;
+    }
+    &.is-active {
+        border-bottom-color: transparent;
+        .header-angle {
+            transform: rotate(90deg)
+        }
+    }
+    .header-angle {
+        transition: transform var(--zx-transition-duration);
+    }
+}
+
+.zx-collapse-item__content {
+    will-change: height;
+    background-color: var(--zx-collapse-content-bg-color);
+    box-sizing: border-box;
+    border-bottom: 1px solid var(--zx-collapse-border-color);
+    padding-bottom: 25px;
+    font-size: var(--zx-collapse-content-font-size);
+    color: var(--zx-collapse-content-text-color);
+}
+/* 淡入淡出动画效果 */
+/* .fade-enter-from, .fade-leave-to {
+    opacity: 0;
+}
+.fade-enter-active, .fade-leave-active {
+    transition: opacity .2s ease-in-out;
+}
+.fade-enter-to, .fade-leave-from {
+    opacity: 1;
+} */
+
+/* 下拉动画 */
+.slide-enter-active, .slide-leave-active {
+    transition: height var(--zx-transition-duration) ease-in-out;
+}

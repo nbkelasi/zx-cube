@@ -1,0 +1,125 @@
+.zx-button{
+    --zx-button-font-weight: var(--zx-font-weight-primary);
+    --zx-button-border-color: var(--zx-border-color);
+    --zx-button-bg-color: var(--zx-fill-color-blank);
+    --zx-button-text-color: var(--zx-text-color-regular);
+    --zx-button-disabled-text-color: var(--zx-disabled-text-color);
+    --zx-button-disabled-bg-color: var(--zx-fill-color-blank);
+    --zx-button-disabled-border-color: var(--zx-border-color-light);
+    --zx-button-divide-border-color: rgba(255, 255, 255, .5);
+    --zx-button-hover-text-color: var(--zx-color-primary);
+    --zx-button-hover-bg-color: var(--zx-color-primary-light-9);
+    --zx-button-hover-border-color: var(--zx-color-primary-light-7);
+    --zx-button-active-text-color: var(--zx-button-hover-text-color);
+    --zx-button-active-border-color: var(--zx-color-primary);
+    --zx-button-active-bg-color: var(--zx-button-hover-bg-color);
+    --zx-button-outline-color: var(--zx-color-primary-light-5);
+    --zx-button-hover-link-text-color: var(--zx-text-color-secondary);
+    --zx-button-active-color: var(--zx-text-color-primary);
+}
+.zx-button{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 1;
+    height: 32px;
+    white-space: nowrap;
+    cursor: pointer;
+    color: var(--zx-button-text-color);
+    text-align: center;
+    box-sizing: border-box;
+    outline: none;
+    transition: .1s;
+    font-weight: var(--zx-button-font-weight);
+    -webkit-user-select: none;
+    user-select: none;
+    vertical-align: middle;
+    -webkit-appearance: none;
+    background-color: var(--zx-button-bg-color);
+    border: var(--zx-border);
+    border-color: var(--zx-button-border-color);
+    padding: 8px 15px;
+    font-size: var(--zx-font-size-base);
+    border-radius: var(--zx-border-radius-base);
+    &{
+        margin-left: 12px;
+        margin-bottom:12px;
+    }
+    &:hover{
+        color: var(--zx-button-hover-text-color);
+        border-color: var(--zx-button-hover-border-color);
+        background-color: var(--zx-button-hover-bg-color);
+        outline: none;
+    }
+    &:active{
+        color: var(--zx-button-active-text-color);
+        border-color: var(--zx-button-active-border-color);
+        background-color: var(--zx-button-active-bg-color);
+        outline: none;
+    }
+    &.is-plain {
+        --zx-button-hover-text-color: var(--zx-color-primary);
+        --zx-button-hover-bg-color: var(--zx-fill-color-blank);
+        --zx-button-hover-border-color: var(--zx-color-primary);
+    }
+    &.is-round {
+        border-radius: var(--zx-border-radius-round);
+    }
+    &.is-circle {
+        border-radius: 50%;
+        padding: 8px;
+    }
+    &.is-disabled, &.is-disabled:hover, &.is-disabled:focus,
+    &[disabled], &[disabled]:hover, &[disabled]:focus
+    {
+        color: var(--zx-button-disabled-text-color);
+        cursor: not-allowed;
+        background-image: none;
+        background-color: var(--zx-button-disabled-bg-color);
+        border-color: var(--zx-button-disabled-border-color);
+    }
+    [class*=zx-icon] + span {
+        margin-left: 6px;
+    }
+}
+@each $val in primary,success,warning,info,danger{
+    .zx-button--$(val){
+    --zx-button-text-color: var(--zx-color-white);
+    --zx-button-bg-color: var(--zx-color-$(val));
+    --zx-button-border-color: var(--zx-color-$(val));
+    --zx-button-outline-color: var(--zx-color-$(val)-light-5);
+    --zx-button-active-color: var(--zx-color-$(val)-dark-2);
+    --zx-button-hover-text-color: var(--zx-color-white);
+    --zx-button-hover-link-text-color: var(--zx-color-$(val)-light-5);
+    --zx-button-hover-bg-color: var(--zx-color-$(val)-light-3);
+    --zx-button-hover-border-color: var(--zx-color-$(val)-light-3);
+    --zx-button-active-bg-color: var(--zx-color-$(val)-dark-2);
+    --zx-button-active-border-color: var(--zx-color-$(val)-dark-2);
+    --zx-button-disabled-text-color: var(--zx-color-white);
+    --zx-button-disabled-bg-color: var(--zx-color-$(val)-light-5);
+    --zx-button-disabled-border-color: var(--zx-color-$(val)-light-5);
+    }
+    .zx-button--$(val).is-plain {
+        --zx-button-text-color: var(--zx-color-$(val));
+        --zx-button-bg-color: var(--zx-color-$(val)-light-9);
+        --zx-button-border-color: var(--zx-color-$(val)-light-5);
+        --zx-button-hover-text-color: var(--zx-color-white);
+        --zx-button-hover-bg-color: var(--zx-color-$(val));
+        --zx-button-hover-border-color: var(--zx-color-$(val));
+        --zx-button-active-text-color: var(--zx-color-white);
+    }
+}
+.zx-button--large {
+    --zx-button-size: 40px;
+    height: var(--zx-button-size);
+    padding: 12px 19px;
+    font-size: var(--zx-font-size-base);
+    border-radius: var(--zx-border-radius-base);
+}
+.zx-button--small {
+    --zx-button-size: 24px;
+    height: var(--zx-button-size);
+    padding: 5px 11px;
+    font-size: 12px;
+    border-radius: calc(var(--zx-border-radius-base) - 1px);
+}

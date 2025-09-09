@@ -1,2 +1,0 @@
-# zx-cube
-vue components

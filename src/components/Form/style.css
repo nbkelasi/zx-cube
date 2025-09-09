@@ -1,0 +1,55 @@
+.zx-form {
+  --zx-form-label-font-size: var(--zx-font-size-base);
+  --zx-form-content-font-size: var(--zx-font-size-base);
+}
+.zx-form-item {
+  display: flex;
+  margin-bottom: 18px;
+  .zx-form-item__label {
+    width: 150px;
+    height: 32px;
+    line-height: 32px;
+    padding: 0 12px 0 0;
+    box-sizing: border-box;
+    display: inline-flex;
+    justify-content: flex-end;
+    font-size: var(--zx-form-label-font-size);
+    color: var(--zx-text-color-regular);
+  }
+  .zx-form-item__content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    flex: 1;
+    line-height: 32px;
+    font-size: var(--zx-form-content-font-size);
+    min-width: 0;
+    position: relative;
+  }
+  .zx-form-item__error-msg {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    padding-top: 2px;
+    color: var(--zx-color-danger);
+    font-size: 12px;
+    line-height: 1;
+  }
+}
+
+.zx-form-item.is-error .zx-input__wrapper {
+  box-shadow: 0 0 0 1px var(--zx-color-danger) inset;
+}
+.zx-form-item.is-success .zx-input__wrapper {
+  box-shadow: 0 0 0 1px var(--zx-color-success) inset;
+}
+.zx-form-item.is-required > .zx-form-item__label::before {
+  content: "*";
+  color: var(--zx-color-danger);
+  margin-right: 4px;
+}
+
+
+
+
+
