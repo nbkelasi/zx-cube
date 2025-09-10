@@ -41,6 +41,7 @@ export default defineConfig({
           {text: 'Button', link: '/components/button'},
           {text: 'Alert', link: '/components/alert' },
           {text: 'Collapse', link: '/components/collapse'},
+          {text: 'Dropdown', link: '/components/dropdown'},
           {text: 'Input', link: '/components/input'},
           {text: 'Switch', link: '/components/switch'},
           {text: 'Select', link: '/components/select'},
