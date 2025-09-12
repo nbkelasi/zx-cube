@@ -40,6 +40,7 @@ export default defineConfig({
         items: [
           {text: 'Button', link: '/components/button'},
           {text: 'Alert', link: '/components/alert' },
+          {text: 'Icon', link: '/components/icon' },
           {text: 'Collapse', link: '/components/collapse'},
           {text: 'Dropdown', link: '/components/dropdown'},
           {text: 'Input', link: '/components/input'},
@@ -51,7 +52,7 @@ export default defineConfig({
     ],
 
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/vuejs/vitepress' }
+      { icon: 'github', link: 'https://github.com/nbkelasi/zx-cube' }
     ]
   }
 })
